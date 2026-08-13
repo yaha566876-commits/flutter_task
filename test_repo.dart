@@ -1,52 +1,12 @@
-import 'dart:io';
-
 void main() {
-  double balance = 1000.0;
-  int option;
+  List<int> numbers = [1, 2, 3, 2, 4, 5, 1, 3, 6, 4];
 
-  do {
-    print('\n===== ATM MENU =====');
-    print('1. Check Balance');
-    print('2. Deposit');
-    print('3. Withdraw');
-    print('4. Exit');
+  Set<int> uniqueNumbers = {};
 
-    stdout.write('Choose an option: ');
-    option = int.parse(stdin.readLineSync()!);
+  for (int number in numbers) {
+    uniqueNumbers.add(number);
+  }
 
-    switch (option) {
-      case 1:
-        print('Current balance: \$${balance.toStringAsFixed(2)}');
-        break;
-
-      case 2:
-        stdout.write('Enter deposit amount: ');
-        double amount = double.parse(stdin.readLineSync()!);
-
-        balance += amount;
-        print('Deposit successful.');
-        print('New balance: \$${balance.toStringAsFixed(2)}');
-        break;
-
-      case 3:
-        stdout.write('Enter withdrawal amount: ');
-        double amount = double.parse(stdin.readLineSync()!);
-
-        if (amount <= balance) {
-          balance -= amount;
-          print('Withdrawal successful.');
-          print('New balance: \$${balance.toStringAsFixed(2)}');
-        } else {
-          print('Not enough money.');
-        }
-        break;
-
-      case 4:
-        print('Goodbye!');
-        break;
-
-      default:
-        print('Invalid option');
-    }
-  } while (option != 4);
+  print('Unique numbers: $uniqueNumbers');
+  print('Number of unique numbers: ${uniqueNumbers.length}');
 }

@@ -1,0 +1,23 @@
+void main() {
+  Map<String, int> students = {
+    'Ahmed': 85,
+    'Sara': 92,
+    'Omar': 76,
+    'Mona': 88,
+    'Ali': 70,
+  };
+
+  int total = 0;
+
+  for (var student in students.entries) {
+    print('${student.key}: ${student.value}');
+    total += student.value;
+
+    if (student.value >= 80) {
+      print('${student.key} scored 80 or higher.');
+    }
+  }
+
+  double average = total / students.length;
+  print('Average grade: $average');
+}

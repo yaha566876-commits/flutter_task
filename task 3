@@ -1,32 +1,30 @@
 void main() {
-  Map<String, double> products = {
-    'Laptop': 900.0,
-    'Mouse': 25.0,
-    'Keyboard': 75.0,
-    'Headphones': 60.0,
-    'USB Cable': 15.0,
+  Map<String, int> products = {
+    "Phone": 100,
+    "Book": 30,
+    "Bag": 60
   };
 
-  double total = 0;
-  String mostExpensiveProduct = '';
-  double highestPrice = 0;
+  int total = 0;
+  int max = 0;
+  String mostExpensiveProduct = "";
 
-  for (var product in products.entries) {
-    print('${product.key}: \$${product.value}');
+  for (var p in products.entries) {
+    print("${p.key}: ${p.value}");
 
-    total += product.value;
+    total += p.value;
 
-    if (product.value > 50) {
-      print('${product.key} costs more than 50.');
+    if (p.value > 50) {
+      print(p.key);
     }
 
-    if (product.value > highestPrice) {
-      highestPrice = product.value;
-      mostExpensiveProduct = product.key;
+    if (p.value > max) {
+      max = p.value;
+      mostExpensiveProduct = p.key;
     }
   }
 
-  print('Total price: \$${total.toStringAsFixed(2)}');
-  print('Most expensive product: $mostExpensiveProduct');
-  print('Price: \$${highestPrice.toStringAsFixed(2)}');
+  print("Total = $total");
+  print("Most expensive product: $mostExpensiveProduct");
+  print("Price = $max");
 }

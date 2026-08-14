@@ -1,9 +1,9 @@
 void main() {
   Map<String, int> students = {
-    'Ahmed': 85,
-    'Sara': 92,
+    'Yousef': 85,
+    'Yaha': 92,
     'Omar': 76,
-    'Mona': 88,
+    'Mahmoud': 88,
     'Ali': 70,
   };
 
